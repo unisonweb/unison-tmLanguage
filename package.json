@@ -1,0 +1,40 @@
+{
+  "name": "unison-tmlanguage",
+  "version": "0.1.0",
+  "description": "Textmate grammar for Unison with outputs for VSCode, Atom and TextMate.",
+  "displayName": "unison-tmLanguage",
+  "license": "Apache 2.0",
+  "icon": "images/unison.png",
+  "bugs": {
+    "url": "https://github.com/unisonweb/unison-tmLanguage/issues"
+  },
+  "contributors": [
+    {
+      "name": "Arya Irani"
+    },
+    {
+      "name": "Ben Fradet"
+    }
+  ],
+  "scripts": {
+    "compile": "node ./node_modules/typescript/bin/tsc -p .",
+    "watch": "node ./node_modules/typescript/bin/tsc -w -p .",
+    "test": "node ./node_modules/gulp/bin/gulp.js test",
+    "prepublish": "node ./node_modules/gulp/bin/gulp.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.2.0",
+    "@types/gulp": "^4.0.2",
+    "@types/mocha": "^6.2.0",
+    "chai": "^4.2.0",
+    "gulp": "^4.0.2",
+    "gulp-json2cson": "^2.0.0",
+    "gulp-mocha": "^7.0.1",
+    "gulp-typescript": "^5.0.1",
+    "mocha": "^6.2.0",
+    "plist": "^3.0.1",
+    "typescript": "^3.5.3",
+    "vscode-textmate": "^4.2.2"
+  }
+}
