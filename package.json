@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Textmate grammar for Unison with outputs for VSCode, Atom and TextMate.",
   "displayName": "unison-tmLanguage",
-  "license": "Apache 2.0",
+  "license": "MIT",
   "icon": "images/unison.png",
   "bugs": {
     "url": "https://github.com/unisonweb/unison-tmLanguage/issues"
