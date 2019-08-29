@@ -174,10 +174,42 @@
       </dict>
       <key>line_comment</key>
       <dict>
-        <key>name</key>
-        <string>comment.line.double-dash.unison</string>
-        <key>match</key>
-        <string>--.*$</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(^\s+)?(?=--)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.whitespace.comment.leading.unison</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=$)</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>name</key>
+                <string>comment.line.double-dash.unison</string>
+                <key>begin</key>
+                <string>(?&lt;!-)--(?:(?!-)|(?=--))</string>
+                <key>beginCaptures</key>
+                <dict>
+                  <key>0</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.comment.unison</string>
+                  </dict>
+                </dict>
+                <key>end</key>
+                <string>(?=$)</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
       </dict>
       <key>control</key>
       <dict>
