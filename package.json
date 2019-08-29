@@ -35,6 +35,6 @@
     "mocha": "^6.2.0",
     "plist": "^3.0.1",
     "typescript": "^3.5.3",
-    "vscode-textmate": "^4.2.2"
+    "vscode-textmate": "^3.3.3"
   }
 }
