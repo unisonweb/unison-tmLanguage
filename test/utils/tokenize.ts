@@ -13,9 +13,11 @@ function createToken(text: string, type: string) {
 
 export namespace Token {
   export namespace Comment {
+    export const LeadingWhitespace = (text: string) =>
+      createToken(text, 'punctuation.whitespace.comment.leading.unison');
     export namespace SingleLine {
-      export const Start = createToken('--', 'punctuation.definition.comment.unison')
-      export const Text = (text: string) => createToken(text, 'comment.line.double-dash.unison')
+      export const Start = createToken('--', 'punctuation.definition.comment.unison');
+      export const Text = (text: string) => createToken(text, 'comment.line.double-dash.unison');
     }
   }
 }
