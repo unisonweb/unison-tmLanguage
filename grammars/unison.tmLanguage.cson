@@ -80,19 +80,25 @@ repository:
       }
     ]
   eof_comment:
-    name: "comment.block.eof.unison"
-    begin: "^---"
-    end: "\\z"
-  block_comment:
-    name: "comment.block.unison"
-    begin: "{-"
-    end: "-}"
-    beginCaptures:
-      "0":
-        name: "punctuation.definition.comment.begin.unison"
-    endCaptures:
-      "0":
-        name: "punctuation.definition.comment.end.unison"
+    patterns: [
+      {
+        begin: "(^\\s+)?(?=---)"
+        beginCaptures:
+          "1":
+            name: "punctuation.whitespace.comment.leading.unison"
+        end: "(?=$)"
+        patterns: [
+          {
+            name: "comment.block.eof.unison"
+            begin: "(?<!-)---(?:(?!-)|(?=---))"
+            beginCaptures:
+              "0":
+                name: "punctuation.definition.comment.unison"
+            end: "\\z"
+          }
+        ]
+      }
+    ]
   line_comment:
     patterns: [
       {
