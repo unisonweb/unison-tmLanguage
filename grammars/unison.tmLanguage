@@ -140,37 +140,42 @@
       </dict>
       <key>eof_comment</key>
       <dict>
-        <key>name</key>
-        <string>comment.block.eof.unison</string>
-        <key>begin</key>
-        <string>^---</string>
-        <key>end</key>
-        <string>\z</string>
-      </dict>
-      <key>block_comment</key>
-      <dict>
-        <key>name</key>
-        <string>comment.block.unison</string>
-        <key>begin</key>
-        <string>{-</string>
-        <key>end</key>
-        <string>-}</string>
-        <key>beginCaptures</key>
-        <dict>
-          <key>0</key>
+        <key>patterns</key>
+        <array>
           <dict>
-            <key>name</key>
-            <string>punctuation.definition.comment.begin.unison</string>
+            <key>begin</key>
+            <string>(^\s+)?(?=---)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.whitespace.comment.leading.unison</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=$)</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>name</key>
+                <string>comment.block.eof.unison</string>
+                <key>begin</key>
+                <string>(?&lt;!-)---(?:(?!-)|(?=---))</string>
+                <key>beginCaptures</key>
+                <dict>
+                  <key>0</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.comment.unison</string>
+                  </dict>
+                </dict>
+                <key>end</key>
+                <string>\z</string>
+              </dict>
+            </array>
           </dict>
-        </dict>
-        <key>endCaptures</key>
-        <dict>
-          <key>0</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.comment.end.unison</string>
-          </dict>
-        </dict>
+        </array>
       </dict>
       <key>line_comment</key>
       <dict>
