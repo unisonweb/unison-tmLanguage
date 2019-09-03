@@ -19,6 +19,14 @@ export namespace Token {
       export const Start = createToken('--', 'punctuation.definition.comment.unison');
       export const Text = (text: string) => createToken(text, 'comment.line.double-dash.unison');
     }
+    export namespace Eof {
+      export const Start = createToken('---', 'punctuation.definition.comment.unison');
+      export const Text = (text: string) => createToken(text, 'comment.block.eof.unison');
+    }
+  }
+
+  export namespace Source {
+    export const Text = (text: string) => createToken(text, 'source.u');
   }
 }
 
