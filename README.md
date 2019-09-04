@@ -5,5 +5,5 @@ A TextMate grammar for the Unison language.
 
 Tests and project scaffolding were heavily inspired by:
 
-- https://github.com/dotnet/csharp-tmLanguage/
-- https://github.com/PanAeon/vscode-tmgrammar-test
+- [dotnet/csharp-tmLanguage](https://github.com/dotnet/csharp-tmLanguage)
+- [PanAeon/vscode-tmgrammar-test](https://github.com/PanAeon/vscode-tmgrammar-test)
