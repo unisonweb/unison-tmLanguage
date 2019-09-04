@@ -25,6 +25,11 @@ export namespace Token {
     }
   }
 
+  export namespace Boolean {
+    export const True = createToken('true', 'constant.language.boolean.true.unison');
+    export const False = createToken('false', 'constant.language.boolean.false.unison');
+  }
+
   export namespace Source {
     export const Text = (text: string) => createToken(text, 'source.u');
   }
