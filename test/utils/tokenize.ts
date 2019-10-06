@@ -30,6 +30,12 @@ export namespace Token {
     export const False = createToken('false', 'constant.language.boolean.false.unison');
   }
 
+  export namespace Number {
+    export const Float = (text: string) => createToken(text, 'constant.numeric.decimal.unison');
+    export const Int = (text: string) => createToken(text, 'constant.numeric.integer.signed.unison');
+    export const Nat = (text: string) => createToken(text, 'constant.numeric.integer.unsigned.unison');
+  }
+
   export namespace Source {
     export const Text = (text: string) => createToken(text, 'source.u');
   }
@@ -77,7 +83,7 @@ export function tokenize(input: string | Input): Token[] {
     const line = input.lines[lineIndex];
 
     let lineResult = grammar.tokenizeLine(line, previousStack);
-    previousStack = lineResult.ruleStack
+    previousStack = lineResult.ruleStack;
 
     if (lineIndex < input.span.startLine || lineIndex > input.span.endLine) {
       continue;
