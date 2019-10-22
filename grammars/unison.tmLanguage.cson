@@ -13,6 +13,9 @@ patterns: [
   {
     include: "#numeric"
   }
+  {
+    include: "#text"
+  }
 ]
 repository:
   comment:
@@ -47,6 +50,16 @@ repository:
         include: "#nat"
       }
     ]
+  text:
+    name: "string.quoted.double.unison"
+    begin: "(\")"
+    beginCaptures:
+      "1":
+        name: "punctuation.definition.string.begin.unison"
+    end: "(\")"
+    endCaptures:
+      "1":
+        name: "punctuation.definition.string.end.unison"
   eof_comment:
     patterns: [
       {
