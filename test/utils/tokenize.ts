@@ -36,6 +36,12 @@ export namespace Token {
     export const Nat = (text: string) => createToken(text, 'constant.numeric.integer.unsigned.unison');
   }
 
+  export namespace Text {
+    export const Start = createToken('"', 'punctuation.definition.string.begin.unison');
+    export const End = createToken('"', 'punctuation.definition.string.end.unison');
+    export const String = (text: string) => createToken(text, 'string.quoted.double.unison');
+  }
+
   export namespace Source {
     export const Text = (text: string) => createToken(text, 'source.u');
   }
