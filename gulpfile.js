@@ -1,12 +1,14 @@
 const gulp = require("gulp");
 const mocha = require("gulp-mocha");
 const json2cson = require("gulp-json2cson");
+const yaml = require("gulp-yaml");
+const js_yaml = require("js-yaml");
 const ts = require("gulp-typescript");
 const plist = require("plist");
 const fs = require("fs");
 const path = require("path");
 
-const inputGrammar = "src/unison.tmLanguage.json";
+const inputGrammar = "src/unison.tmLanguage.yml";
 const grammarsDirectory = "grammars/";
 const jsOut = "out/";
 
@@ -17,7 +19,7 @@ function handleError(err) {
 
 gulp.task('buildTmLanguage', done => {
     const text = fs.readFileSync(inputGrammar);
-    const jsonData = JSON.parse(text);
+    const jsonData = js_yaml.safeLoad(text);
     const plistData = plist.build(jsonData);
 
     if (!fs.existsSync(grammarsDirectory)) {
@@ -31,6 +33,7 @@ gulp.task('buildTmLanguage', done => {
 
 gulp.task('buildAtom', () => {
     return gulp.src(inputGrammar)
+        .pipe(yaml())
         .pipe(json2cson())
         .pipe(gulp.dest(grammarsDirectory))
         .on("error", handleError);
