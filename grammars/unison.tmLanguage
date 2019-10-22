@@ -2,10 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
-    <key>$schema</key>
-    <string>https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json</string>
     <key>name</key>
     <string>Unison</string>
+    <key>scopeName</key>
+    <string>source.u</string>
+    <key>fileTypes</key>
+    <array>
+      <string>u</string>
+    </array>
     <key>patterns</key>
     <array>
       <dict>
@@ -20,110 +24,9 @@
         <key>include</key>
         <string>#numeric</string>
       </dict>
-      <dict>
-        <key>include</key>
-        <string>#text</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#case_of</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#control</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#annotation</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#forall</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#arrow</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#watch</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#test_watch</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#unsorted_reserved_chars</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#unsorted_keywords</string>
-      </dict>
     </array>
     <key>repository</key>
     <dict>
-      <key>annotation</key>
-      <dict>
-        <key>name</key>
-        <string>meta.function.type-declaration.unison</string>
-        <key>match</key>
-        <string>([^\r\n\t\f\v "]+)\s*(:)(?=\s)</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>entity.name.function.unison</string>
-          </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>keyword.other.colon.unison</string>
-          </dict>
-        </dict>
-      </dict>
-      <key>boolean</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>include</key>
-            <string>#true</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#false</string>
-          </dict>
-        </array>
-      </dict>
-      <key>true</key>
-      <dict>
-        <key>match</key>
-        <string>true</string>
-        <key>name</key>
-        <string>constant.language.boolean.true.unison</string>
-      </dict>
-      <key>false</key>
-      <dict>
-        <key>match</key>
-        <string>false</string>
-        <key>name</key>
-        <string>constant.language.boolean.false.unison</string>
-      </dict>
-      <key>case_of</key>
-      <dict>
-        <key>match</key>
-        <string>(\s|^)(case|of|-&gt;)(?=\s|$)</string>
-        <key>captures</key>
-        <dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>keyword.control.case.unison</string>
-          </dict>
-        </dict>
-      </dict>
       <key>comment</key>
       <dict>
         <key>patterns</key>
@@ -135,6 +38,42 @@
           <dict>
             <key>include</key>
             <string>#line_comment</string>
+          </dict>
+        </array>
+      </dict>
+      <key>boolean</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>constant.language.boolean.true.unison</string>
+            <key>match</key>
+            <string>true</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>constant.language.boolean.false.unison</string>
+            <key>match</key>
+            <string>false</string>
+          </dict>
+        </array>
+      </dict>
+      <key>numeric</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#float</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#int</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#nat</string>
           </dict>
         </array>
       </dict>
@@ -216,37 +155,6 @@
           </dict>
         </array>
       </dict>
-      <key>control</key>
-      <dict>
-        <key>match</key>
-        <string>\b(if|then|else|and|or)\b</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>keyword.control.unison</string>
-          </dict>
-        </dict>
-      </dict>
-      <key>numeric</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>include</key>
-            <string>#float</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#int</string>
-          </dict>
-          <dict>
-            <key>#include</key>
-            <string>#nat</string>
-          </dict>
-        </array>
-      </dict>
       <key>float</key>
       <dict>
         <key>match</key>
@@ -276,169 +184,16 @@
       <key>nat</key>
       <dict>
         <key>match</key>
-        <string>([^+\-\w\d]|^)(\d+)</string>
+        <string>\b(\d+)</string>
         <key>captures</key>
         <dict>
-          <key>2</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>constant.numeric.integer.unsigned.unison</string>
           </dict>
         </dict>
       </dict>
-      <key>text</key>
-      <dict>
-        <key>name</key>
-        <string>string.quoted.double.unison</string>
-        <key>match</key>
-        <string>(")(.*?)(")</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.string.begin.unison</string>
-          </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.string.end.unison</string>
-          </dict>
-        </dict>
-      </dict>
-      <key>forall</key>
-      <dict>
-        <key>match</key>
-        <string>(\s|^)(forall|∀)(?=\s|^)</string>
-        <key>captures</key>
-        <dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>keyword.other.forall.unison</string>
-          </dict>
-        </dict>
-      </dict>
-      <key>arrow</key>
-      <dict>
-        <key>match</key>
-        <string>(-&gt;)</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>keyword.other.arrow.unison</string>
-          </dict>
-        </dict>
-      </dict>
-      <key>watch</key>
-      <dict>
-        <key>match</key>
-        <string>^(&gt;)</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>keyword.other.watch.expression.unison</string>
-          </dict>
-        </dict>
-      </dict>
-      <key>test_watch</key>
-      <dict>
-        <key>match</key>
-        <string>^(test&gt;)</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>keyword.other.test.watch.expression.unison</string>
-          </dict>
-        </dict>
-      </dict>
-      <key>use</key>
-      <dict>
-        <key>match</key>
-        <string>(\s|^)(use)(?=\s|$)</string>
-        <key>captures</key>
-        <dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>keyword.control.import.unison</string>
-          </dict>
-        </dict>
-      </dict>
-      <key>unsorted_keywords</key>
-      <dict>
-        <key>match</key>
-        <string>(\s|^)(let|alias|handle|in|namespace|type|ability|where|unique|use|with)(?=\s|$)</string>
-        <key>captures</key>
-        <dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>keyword.control.unison</string>
-          </dict>
-        </dict>
-      </dict>
-      <key>unsorted_reserved_chars</key>
-      <dict>
-        <key>match</key>
-        <string>(,)|('|!)|(\[)|(\])|({)|(})|(@)|(\|)|(#)</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.separator.delimiter.unison</string>
-          </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.delayed.unison</string>
-          </dict>
-          <key>3</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.list.begin.unison</string>
-          </dict>
-          <key>4</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.list.end.unison</string>
-          </dict>
-          <key>5</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.ability.begin.unison</string>
-          </dict>
-          <key>6</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.ability.end.unison</string>
-          </dict>
-          <key>7</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.operator.assignment.as.unison</string>
-          </dict>
-          <key>8</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.separator.pipe.unison</string>
-          </dict>
-          <key>9</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.hash.unison</string>
-          </dict>
-        </dict>
-      </dict>
     </dict>
-    <key>scopeName</key>
-    <string>source.u</string>
   </dict>
 </plist>

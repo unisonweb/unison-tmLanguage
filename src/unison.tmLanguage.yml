@@ -1,0 +1,64 @@
+---
+name: Unison
+scopeName: source.u
+fileTypes: [u]
+
+patterns:
+- include: '#comment'
+- include: '#boolean'
+- include: '#numeric'
+
+repository:
+  comment:
+    patterns:
+    - include: '#eof_comment'
+    - include: '#line_comment'
+  boolean:
+    patterns:
+    - name: constant.language.boolean.true.unison
+      match: 'true'
+    - name: constant.language.boolean.false.unison
+      match: 'false'
+  numeric:
+    patterns:
+    - include: '#float'
+    - include: '#int'
+    - include: '#nat'
+
+  eof_comment:
+    patterns:
+    - begin: (^\s+)?(?=---)
+      beginCaptures:
+        '1': { name: punctuation.whitespace.comment.leading.unison }
+      end: (?=$)
+      patterns:
+      - name: comment.block.eof.unison
+        begin: (?<!-)---(?:(?!-)|(?=---))
+        beginCaptures:
+          '0': { name: punctuation.definition.comment.unison }
+        end: \z
+  line_comment:
+    patterns:
+    - begin: (^\s+)?(?=--)
+      beginCaptures:
+        '1': { name: punctuation.whitespace.comment.leading.unison }
+      end: (?=$)
+      patterns:
+      - name: comment.line.double-dash.unison
+        begin: (?<!-)--(?:(?!-)|(?=--))
+        beginCaptures:
+          '0': { name: punctuation.definition.comment.unison }
+        end: (?=$)
+
+  float:
+    match: ([^+\-\w\d]|^)([+-]?\d+\.\d*)
+    captures:
+      '2': { name: constant.numeric.decimal.unison }
+  int:
+    match: ([^\w\d]|^)([+-]\d+)
+    captures:
+      '2': { name: constant.numeric.integer.signed.unison }
+  nat:
+    match: \b(\d+)
+    captures:
+      '1': { name: constant.numeric.integer.unsigned.unison }
