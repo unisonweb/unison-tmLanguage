@@ -24,6 +24,10 @@
         <key>include</key>
         <string>#numeric</string>
       </dict>
+      <dict>
+        <key>include</key>
+        <string>#text</string>
+      </dict>
     </array>
     <key>repository</key>
     <dict>
@@ -76,6 +80,31 @@
             <string>#nat</string>
           </dict>
         </array>
+      </dict>
+      <key>text</key>
+      <dict>
+        <key>name</key>
+        <string>string.quoted.double.unison</string>
+        <key>begin</key>
+        <string>(")</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.string.begin.unison</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>(")</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.string.end.unison</string>
+          </dict>
+        </dict>
       </dict>
       <key>eof_comment</key>
       <dict>
