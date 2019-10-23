@@ -37,11 +37,11 @@
         <array>
           <dict>
             <key>include</key>
-            <string>#eof_comment</string>
+            <string>#eof-comment</string>
           </dict>
           <dict>
             <key>include</key>
-            <string>#line_comment</string>
+            <string>#line-comment</string>
           </dict>
         </array>
       </dict>
@@ -105,8 +105,15 @@
             <string>punctuation.definition.string.end.unison</string>
           </dict>
         </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#string-character-escape</string>
+          </dict>
+        </array>
       </dict>
-      <key>eof_comment</key>
+      <key>eof-comment</key>
       <dict>
         <key>patterns</key>
         <array>
@@ -145,7 +152,7 @@
           </dict>
         </array>
       </dict>
-      <key>line_comment</key>
+      <key>line-comment</key>
       <dict>
         <key>patterns</key>
         <array>
@@ -222,6 +229,13 @@
             <string>constant.numeric.integer.unsigned.unison</string>
           </dict>
         </dict>
+      </dict>
+      <key>string-character-escape</key>
+      <dict>
+        <key>name</key>
+        <string>constant.character.escape.unison</string>
+        <key>match</key>
+        <string>\\"</string>
       </dict>
     </dict>
   </dict>

@@ -12,8 +12,8 @@ patterns:
 repository:
   comment:
     patterns:
-    - include: '#eof_comment'
-    - include: '#line_comment'
+    - include: '#eof-comment'
+    - include: '#line-comment'
   boolean:
     patterns:
     - name: constant.language.boolean.true.unison
@@ -33,8 +33,11 @@ repository:
     end: (")
     endCaptures:
       '1': { name: punctuation.definition.string.end.unison }
+    patterns:
+    - include: '#string-character-escape'
 
-  eof_comment:
+
+  eof-comment:
     patterns:
     - begin: (^\s+)?(?=---)
       beginCaptures:
@@ -46,7 +49,7 @@ repository:
         beginCaptures:
           '0': { name: punctuation.definition.comment.unison }
         end: \z
-  line_comment:
+  line-comment:
     patterns:
     - begin: (^\s+)?(?=--)
       beginCaptures:
@@ -71,3 +74,7 @@ repository:
     match: \b(\d+)
     captures:
       '1': { name: constant.numeric.integer.unsigned.unison }
+
+  string-character-escape:
+    name: constant.character.escape.unison
+    match: \\"
