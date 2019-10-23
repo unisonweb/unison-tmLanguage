@@ -21,10 +21,10 @@ repository:
   comment:
     patterns: [
       {
-        include: "#eof_comment"
+        include: "#eof-comment"
       }
       {
-        include: "#line_comment"
+        include: "#line-comment"
       }
     ]
   boolean:
@@ -60,7 +60,12 @@ repository:
     endCaptures:
       "1":
         name: "punctuation.definition.string.end.unison"
-  eof_comment:
+    patterns: [
+      {
+        include: "#string-character-escape"
+      }
+    ]
+  "eof-comment":
     patterns: [
       {
         begin: "(^\\s+)?(?=---)"
@@ -80,7 +85,7 @@ repository:
         ]
       }
     ]
-  line_comment:
+  "line-comment":
     patterns: [
       {
         begin: "(^\\s+)?(?=--)"
@@ -115,3 +120,6 @@ repository:
     captures:
       "1":
         name: "constant.numeric.integer.unsigned.unison"
+  "string-character-escape":
+    name: "constant.character.escape.unison"
+    match: "\\\\\""
