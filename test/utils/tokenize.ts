@@ -39,6 +39,7 @@ export namespace Token {
   export namespace Text {
     export const Start = createToken('"', 'punctuation.definition.string.begin.unison');
     export const End = createToken('"', 'punctuation.definition.string.end.unison');
+    export const CharacterEscape = createToken('\\\"', 'constant.character.escape.unison');
     export const String = (text: string) => createToken(text, 'string.quoted.double.unison');
   }
 
