@@ -43,6 +43,12 @@ export namespace Token {
     export const String = (text: string) => createToken(text, 'string.quoted.double.unison');
   }
 
+  export namespace CaseOf {
+    export const Case = createToken('case', 'keyword.control.case.unison');
+    export const Of = createToken('of', 'keyword.control.case.unison');
+    export const Arrow = createToken('->', 'keyword.control.case.unison');
+  }
+
   export namespace Source {
     export const Text = (text: string) => createToken(text, 'source.u');
   }
