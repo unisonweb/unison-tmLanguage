@@ -16,6 +16,9 @@ patterns: [
   {
     include: "#text"
   }
+  {
+    include: "#case-of"
+  }
 ]
 repository:
   comment:
@@ -65,6 +68,11 @@ repository:
         include: "#string-character-escape"
       }
     ]
+  "case-of":
+    match: "(\\s|^)(case|of|->)(?=\\s|$)"
+    captures:
+      "2":
+        name: "keyword.control.case.unison"
   "eof-comment":
     patterns: [
       {
