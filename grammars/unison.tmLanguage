@@ -28,6 +28,10 @@
         <key>include</key>
         <string>#text</string>
       </dict>
+      <dict>
+        <key>include</key>
+        <string>#case-of</string>
+      </dict>
     </array>
     <key>repository</key>
     <dict>
@@ -112,6 +116,19 @@
             <string>#string-character-escape</string>
           </dict>
         </array>
+      </dict>
+      <key>case-of</key>
+      <dict>
+        <key>match</key>
+        <string>(\s|^)(case|of|-&gt;)(?=\s|$)</string>
+        <key>captures</key>
+        <dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.case.unison</string>
+          </dict>
+        </dict>
       </dict>
       <key>eof-comment</key>
       <dict>
