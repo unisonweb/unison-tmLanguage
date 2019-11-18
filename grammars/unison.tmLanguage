@@ -32,6 +32,10 @@
         <key>include</key>
         <string>#case-of</string>
       </dict>
+      <dict>
+        <key>include</key>
+        <string>#control</string>
+      </dict>
     </array>
     <key>repository</key>
     <dict>
@@ -127,6 +131,19 @@
           <dict>
             <key>name</key>
             <string>keyword.control.case.unison</string>
+          </dict>
+        </dict>
+      </dict>
+      <key>control</key>
+      <dict>
+        <key>match</key>
+        <string>\b(if|then|else|and|or|&amp;&amp;|\|\|)\b</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.unison</string>
           </dict>
         </dict>
       </dict>
