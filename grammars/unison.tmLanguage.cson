@@ -19,6 +19,9 @@ patterns: [
   {
     include: "#case-of"
   }
+  {
+    include: "#control"
+  }
 ]
 repository:
   comment:
@@ -73,6 +76,11 @@ repository:
     captures:
       "2":
         name: "keyword.control.case.unison"
+  control:
+    match: "\\b(if|then|else|and|or|&&|\\|\\|)\\b"
+    captures:
+      "1":
+        name: "keyword.control.unison"
   "eof-comment":
     patterns: [
       {
