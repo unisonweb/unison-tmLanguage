@@ -49,6 +49,16 @@ export namespace Token {
     export const Arrow = createToken('->', 'keyword.control.case.unison');
   }
 
+  export namespace Control {
+    export const If = createToken('if', 'keyword.control.unison');
+    export const Then = createToken('then', 'keyword.control.unison');
+    export const Else = createToken('else', 'keyword.control.unison');
+    export const And = createToken('and', 'keyword.control.unison');
+    export const Or = createToken('or', 'keyword.control.unison');
+    export const AndAmpersands = createToken('&&', 'keyword.control.unison');
+    export const OrVerticalBars = createToken('||', 'keyword.control.unison');
+  }
+
   export namespace Source {
     export const Text = (text: string) => createToken(text, 'source.u');
   }
