@@ -38,22 +38,5 @@ describe("Grammar", () => {
         Token.Boolean.True
       ]);
     });
-
-    it("&&/||", () => {
-      const input = `false && false || true`;
-      const tokens = tokenize(input)
-
-      tokens.should.deep.equal([
-        Token.Boolean.False,
-        Token.Source.Text(" "),
-        Token.Control.AndAmpersands,
-        Token.Source.Text(" "),
-        Token.Boolean.False,
-        Token.Source.Text(" "),
-        Token.Control.OrVerticalBars,
-        Token.Source.Text(" "),
-        Token.Boolean.True
-      ]);
-    });
   });
 });
