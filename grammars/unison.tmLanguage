@@ -137,7 +137,7 @@
       <key>control</key>
       <dict>
         <key>match</key>
-        <string>\b(if|then|else|and|or|&amp;&amp;|\|\|)\b</string>
+        <string>\b(if|then|else|and|or)\b</string>
         <key>captures</key>
         <dict>
           <key>1</key>
