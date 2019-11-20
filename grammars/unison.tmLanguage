@@ -136,16 +136,33 @@
       </dict>
       <key>control</key>
       <dict>
-        <key>match</key>
-        <string>\b(if|then|else|and|or)\b</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
+        <key>patterns</key>
+        <array>
           <dict>
-            <key>name</key>
-            <string>keyword.control.unison</string>
+            <key>match</key>
+            <string>\b(if|then|else|and|or)\b</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.control.unison</string>
+              </dict>
+            </dict>
           </dict>
-        </dict>
+          <dict>
+            <key>match</key>
+            <string>(&amp;&amp;|\|\|)</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.control.unison</string>
+              </dict>
+            </dict>
+          </dict>
+        </array>
       </dict>
       <key>eof-comment</key>
       <dict>
