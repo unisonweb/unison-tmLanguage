@@ -22,6 +22,9 @@ patterns: [
   {
     include: "#control"
   }
+  {
+    include: "#def"
+  }
 ]
 repository:
   comment:
@@ -91,6 +94,13 @@ repository:
             name: "keyword.control.unison"
       }
     ]
+  def:
+    match: "([^\\r\\n\\t\\f\\v \\\"]+)\\s*(:)"
+    captures:
+      "1":
+        name: "entity.name.function.unison"
+      "2":
+        name: "keyword.other.colon.unison"
   "eof-comment":
     patterns: [
       {
