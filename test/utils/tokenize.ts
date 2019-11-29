@@ -59,6 +59,11 @@ export namespace Token {
     export const OrVerticalBars = createToken('||', 'keyword.control.unison');
   }
 
+  export namespace Def {
+    export const Fn = (text: string) => createToken(text, 'entity.name.function.unison');
+    export const Colon = createToken(':', 'keyword.other.colon.unison');
+  }
+
   export namespace Source {
     export const Text = (text: string) => createToken(text, 'source.u');
   }
