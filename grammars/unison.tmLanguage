@@ -36,6 +36,10 @@
         <key>include</key>
         <string>#control</string>
       </dict>
+      <dict>
+        <key>include</key>
+        <string>#def</string>
+      </dict>
     </array>
     <key>repository</key>
     <dict>
@@ -163,6 +167,24 @@
             </dict>
           </dict>
         </array>
+      </dict>
+      <key>def</key>
+      <dict>
+        <key>match</key>
+        <string>([^\r\n\t\f\v \"]+)\s*(:)</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>entity.name.function.unison</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.colon.unison</string>
+          </dict>
+        </dict>
       </dict>
       <key>eof-comment</key>
       <dict>
