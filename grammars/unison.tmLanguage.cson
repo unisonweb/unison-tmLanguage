@@ -17,7 +17,7 @@ patterns: [
     include: "#text"
   }
   {
-    include: "#case-of"
+    include: "#match-with"
   }
   {
     include: "#control"
@@ -74,11 +74,11 @@ repository:
         include: "#string-character-escape"
       }
     ]
-  "case-of":
-    match: "(\\s|^)(case|of|->)(?=\\s|$)"
+  "match-with":
+    match: "(\\s|^)(match|with|->|cases)(?=\\s|$)"
     captures:
       "2":
-        name: "keyword.control.case.unison"
+        name: "keyword.control.match.unison"
   control:
     patterns: [
       {
