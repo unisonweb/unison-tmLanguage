@@ -39,6 +39,13 @@ gulp.task('buildAtom', () => {
         .on("error", handleError);
 });
 
+gulp.task('buildVsCode', () => {
+    return gulp.src(inputGrammar)
+        .pipe(yaml({ space: 2 }))
+        .pipe(gulp.dest(grammarsDirectory))
+        .on("error", handleError);
+});
+
 gulp.task('compile', () => {
     const tsProject = ts.createProject("./tsconfig.json");
     return tsProject.src()
@@ -58,5 +65,4 @@ gulp.task('test', gulp.series('compile', done => {
 
 gulp.task('default',
     gulp.series(
-        gulp.parallel('buildAtom', 'buildTmLanguage'),
-        'test'));
+        gulp.parallel('buildAtom', 'buildVsCode', 'buildTmLanguage'), 'test'));

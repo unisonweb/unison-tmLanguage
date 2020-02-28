@@ -1,0 +1,204 @@
+{
+  "name": "Unison",
+  "scopeName": "source.u",
+  "fileTypes": [
+    "u"
+  ],
+  "patterns": [
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#boolean"
+    },
+    {
+      "include": "#numeric"
+    },
+    {
+      "include": "#text"
+    },
+    {
+      "include": "#match-with"
+    },
+    {
+      "include": "#control"
+    },
+    {
+      "include": "#def"
+    }
+  ],
+  "repository": {
+    "comment": {
+      "patterns": [
+        {
+          "include": "#eof-comment"
+        },
+        {
+          "include": "#line-comment"
+        }
+      ]
+    },
+    "boolean": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.true.unison",
+          "match": "true"
+        },
+        {
+          "name": "constant.language.boolean.false.unison",
+          "match": "false"
+        }
+      ]
+    },
+    "numeric": {
+      "patterns": [
+        {
+          "include": "#float"
+        },
+        {
+          "include": "#int"
+        },
+        {
+          "include": "#nat"
+        }
+      ]
+    },
+    "text": {
+      "name": "string.quoted.double.unison",
+      "begin": "(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.unison"
+        }
+      },
+      "end": "(\")",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.end.unison"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#string-character-escape"
+        }
+      ]
+    },
+    "match-with": {
+      "match": "(\\s|^)(cases|match|with|->)(?=\\s|$)",
+      "captures": {
+        "2": {
+          "name": "keyword.control.match.unison"
+        }
+      }
+    },
+    "control": {
+      "patterns": [
+        {
+          "match": "\\b(if|then|else|and|or)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.control.unison"
+            }
+          }
+        },
+        {
+          "match": "(&&|\\|\\|)",
+          "captures": {
+            "1": {
+              "name": "keyword.control.unison"
+            }
+          }
+        }
+      ]
+    },
+    "def": {
+      "match": "([^\\r\\n\\t\\f\\v \\\"]+)\\s*(:)",
+      "captures": {
+        "1": {
+          "name": "entity.name.function.unison"
+        },
+        "2": {
+          "name": "keyword.other.colon.unison"
+        }
+      }
+    },
+    "eof-comment": {
+      "patterns": [
+        {
+          "begin": "(^\\s+)?(?=---)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.whitespace.comment.leading.unison"
+            }
+          },
+          "end": "(?=$)",
+          "patterns": [
+            {
+              "name": "comment.block.eof.unison",
+              "begin": "(?<!-)---(?:(?!-)|(?=---))",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.unison"
+                }
+              },
+              "end": "\\z"
+            }
+          ]
+        }
+      ]
+    },
+    "line-comment": {
+      "patterns": [
+        {
+          "begin": "(^\\s+)?(?=--)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.whitespace.comment.leading.unison"
+            }
+          },
+          "end": "(?=$)",
+          "patterns": [
+            {
+              "name": "comment.line.double-dash.unison",
+              "begin": "(?<!-)--(?:(?!-)|(?=--))",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.unison"
+                }
+              },
+              "end": "(?=$)"
+            }
+          ]
+        }
+      ]
+    },
+    "float": {
+      "match": "([^+\\-\\w\\d]|^)([+-]?\\d+\\.\\d*)",
+      "captures": {
+        "2": {
+          "name": "constant.numeric.decimal.unison"
+        }
+      }
+    },
+    "int": {
+      "match": "([^\\w\\d]|^)([+-]\\d+)",
+      "captures": {
+        "2": {
+          "name": "constant.numeric.integer.signed.unison"
+        }
+      }
+    },
+    "nat": {
+      "match": "\\b(\\d+)",
+      "captures": {
+        "1": {
+          "name": "constant.numeric.integer.unsigned.unison"
+        }
+      }
+    },
+    "string-character-escape": {
+      "name": "constant.character.escape.unison",
+      "match": "\\\\\""
+    }
+  }
+}
