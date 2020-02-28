@@ -8,7 +8,7 @@ patterns:
 - include: '#boolean'
 - include: '#numeric'
 - include: '#text'
-- include: '#case-of'
+- include: '#match-with'
 - include: '#control'
 - include: '#def'
 
@@ -38,10 +38,10 @@ repository:
       '1': { name: punctuation.definition.string.end.unison }
     patterns:
     - include: '#string-character-escape'
-  case-of:
-    match: (\s|^)(case|of|->)(?=\s|$)
+  match-with:
+    match: (\s|^)(cases|match|with|->)(?=\s|$)
     captures:
-      '2': { name: keyword.control.case.unison }
+      '2': { name: keyword.control.match.unison }
   control:
     patterns:
     - match: \b(if|then|else|and|or)\b
