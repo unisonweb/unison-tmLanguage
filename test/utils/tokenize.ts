@@ -43,10 +43,10 @@ export namespace Token {
     export const String = (text: string) => createToken(text, 'string.quoted.double.unison');
   }
 
-  export namespace CaseOf {
-    export const Case = createToken('case', 'keyword.control.case.unison');
-    export const Of = createToken('of', 'keyword.control.case.unison');
-    export const Arrow = createToken('->', 'keyword.control.case.unison');
+  export namespace MatchWith {
+    export const Match = createToken('match', 'keyword.control.match.unison');
+    export const With = createToken('with', 'keyword.control.match.unison');
+    export const Arrow = createToken('->', 'keyword.control.match.unison');
   }
 
   export namespace Control {

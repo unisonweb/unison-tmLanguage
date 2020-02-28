@@ -4,20 +4,20 @@ import { tokenize, Token } from './utils/tokenize';
 describe("Grammar", () => {
   before(() => { should(); });
 
-  describe("Cases", () => {
-    it("case of", () => {
-      const input = `case i of
+  describe("Matches", () => {
+    it("match with", () => {
+      const input = `match i with
 _ -> false`;
       const tokens = tokenize(input)
 
       tokens.should.deep.equal([
-        Token.CaseOf.Case,
+        Token.MatchWith.Match,
         Token.Source.Text(" i"),
         Token.Source.Text(" "),
-        Token.CaseOf.Of,
+        Token.MatchWith.With,
         Token.Source.Text("_"),
         Token.Source.Text(" "),
-        Token.CaseOf.Arrow,
+        Token.MatchWith.Arrow,
         Token.Source.Text(" "),
         Token.Boolean.False
       ]);
