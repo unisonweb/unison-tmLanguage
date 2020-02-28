@@ -30,7 +30,7 @@
       </dict>
       <dict>
         <key>include</key>
-        <string>#case-of</string>
+        <string>#match-with</string>
       </dict>
       <dict>
         <key>include</key>
@@ -125,16 +125,16 @@
           </dict>
         </array>
       </dict>
-      <key>case-of</key>
+      <key>match-with</key>
       <dict>
         <key>match</key>
-        <string>(\s|^)(case|of|-&gt;)(?=\s|$)</string>
+        <string>(\s|^)(cases|match|with|-&gt;)(?=\s|$)</string>
         <key>captures</key>
         <dict>
           <key>2</key>
           <dict>
             <key>name</key>
-            <string>keyword.control.case.unison</string>
+            <string>keyword.control.match.unison</string>
           </dict>
         </dict>
       </dict>
