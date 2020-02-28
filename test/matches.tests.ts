@@ -22,5 +22,20 @@ _ -> false`;
         Token.Boolean.False
       ]);
     });
+
+    it("cases", () => {
+      const input = `cases
+_ -> false`;
+      const tokens = tokenize(input)
+
+      tokens.should.deep.equal([
+        Token.MatchWith.Cases,
+        Token.Source.Text("_"),
+        Token.Source.Text(" "),
+        Token.MatchWith.Arrow,
+        Token.Source.Text(" "),
+        Token.Boolean.False
+      ]);
+    });
   });
 });

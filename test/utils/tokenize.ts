@@ -46,6 +46,7 @@ export namespace Token {
   export namespace MatchWith {
     export const Match = createToken('match', 'keyword.control.match.unison');
     export const With = createToken('with', 'keyword.control.match.unison');
+    export const Cases = createToken('cases', 'keyword.control.match.unison');
     export const Arrow = createToken('->', 'keyword.control.match.unison');
   }
 
