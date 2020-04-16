@@ -11,6 +11,7 @@ patterns:
 - include: '#match-with'
 - include: '#control'
 - include: '#def'
+- include: '#forall'
 
 repository:
   comment:
@@ -55,6 +56,10 @@ repository:
     captures:
       '1': { name: entity.name.function.unison }
       '2': { name: keyword.other.colon.unison }
+  forall:
+    match: (\\s|^)(forall|∀)(?=\\s|^)
+    captures:
+      '2': { name: keyword.other.forall.unison }
 
   eof-comment:
     patterns:

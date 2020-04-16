@@ -40,6 +40,10 @@
         <key>include</key>
         <string>#def</string>
       </dict>
+      <dict>
+        <key>include</key>
+        <string>#forall</string>
+      </dict>
     </array>
     <key>repository</key>
     <dict>
@@ -183,6 +187,19 @@
           <dict>
             <key>name</key>
             <string>keyword.other.colon.unison</string>
+          </dict>
+        </dict>
+      </dict>
+      <key>forall</key>
+      <dict>
+        <key>match</key>
+        <string>(\\s|^)(forall|∀)(?=\\s|^)</string>
+        <key>captures</key>
+        <dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.forall.unison</string>
           </dict>
         </dict>
       </dict>
