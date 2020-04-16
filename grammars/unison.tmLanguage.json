@@ -126,7 +126,7 @@
       }
     },
     "forall": {
-      "match": "(\\s|^)(forall|∀)(?=\\s|$)",
+      "match": "(\\s|^|\\b)(forall|∀)(\\s|$|\\b)",
       "captures": {
         "2": {
           "name": "keyword.other.forall.unison"

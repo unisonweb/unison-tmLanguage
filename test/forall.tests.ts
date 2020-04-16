@@ -11,7 +11,8 @@ describe("Grammar", () => {
 
       tokens.should.deep.equal([
         Token.ForAll.ForAll,
-        Token.Source.Text(" a. a"),
+        Token.Source.Text(" "),
+        Token.Source.Text("a. a"),
         Token.Source.Text(" "),
         Token.MatchWith.Arrow
       ]);
@@ -23,7 +24,8 @@ describe("Grammar", () => {
 
       tokens.should.deep.equal([
         Token.ForAll.ForAllSymbol,
-        Token.Source.Text(" a. a"),
+        Token.Source.Text(" "),
+        Token.Source.Text("a. a"),
         Token.Source.Text(" "),
         Token.MatchWith.Arrow
       ]);

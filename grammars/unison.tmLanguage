@@ -193,7 +193,7 @@
       <key>forall</key>
       <dict>
         <key>match</key>
-        <string>(\s|^)(forall|∀)(?=\s|$)</string>
+        <string>(\s|^|\b)(forall|∀)(\s|$|\b)</string>
         <key>captures</key>
         <dict>
           <key>2</key>
