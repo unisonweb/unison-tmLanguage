@@ -57,7 +57,7 @@ repository:
       '1': { name: entity.name.function.unison }
       '2': { name: keyword.other.colon.unison }
   forall:
-    match: (\s|^)(forall|∀)(?=\s|$)
+    match: (\s|^|\b)(forall|∀)(\s|$|\b)
     captures:
       '2': { name: keyword.other.forall.unison }
 
