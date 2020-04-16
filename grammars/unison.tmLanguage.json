@@ -25,6 +25,9 @@
     },
     {
       "include": "#def"
+    },
+    {
+      "include": "#forall"
     }
   ],
   "repository": {
@@ -119,6 +122,14 @@
         },
         "2": {
           "name": "keyword.other.colon.unison"
+        }
+      }
+    },
+    "forall": {
+      "match": "(\\\\s|^)(forall|∀)(?=\\\\s|^)",
+      "captures": {
+        "2": {
+          "name": "keyword.other.forall.unison"
         }
       }
     },
