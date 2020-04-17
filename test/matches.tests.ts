@@ -15,9 +15,8 @@ _ -> false`;
         Token.Source.Text(" i"),
         Token.Source.Text(" "),
         Token.MatchWith.With,
-        Token.Source.Text("_"),
-        Token.Source.Text(" "),
-        Token.MatchWith.Arrow,
+        Token.Source.Text("_ "),
+        Token.Arrow.Arrow,
         Token.Source.Text(" "),
         Token.Boolean.False
       ]);
@@ -30,9 +29,8 @@ _ -> false`;
 
       tokens.should.deep.equal([
         Token.MatchWith.Cases,
-        Token.Source.Text("_"),
-        Token.Source.Text(" "),
-        Token.MatchWith.Arrow,
+        Token.Source.Text("_ "),
+        Token.Arrow.Arrow,
         Token.Source.Text(" "),
         Token.Boolean.False
       ]);
