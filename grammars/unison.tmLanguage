@@ -44,6 +44,10 @@
         <key>include</key>
         <string>#forall</string>
       </dict>
+      <dict>
+        <key>include</key>
+        <string>#arrow</string>
+      </dict>
     </array>
     <key>repository</key>
     <dict>
@@ -132,7 +136,7 @@
       <key>match-with</key>
       <dict>
         <key>match</key>
-        <string>(\s|^)(cases|match|with|-&gt;)(?=\s|$)</string>
+        <string>(\s|^)(cases|match|with)(?=\s|$)</string>
         <key>captures</key>
         <dict>
           <key>2</key>
@@ -200,6 +204,19 @@
           <dict>
             <key>name</key>
             <string>keyword.other.forall.unison</string>
+          </dict>
+        </dict>
+      </dict>
+      <key>arrow</key>
+      <dict>
+        <key>match</key>
+        <string>(-&gt;)</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.arrow.unison</string>
           </dict>
         </dict>
       </dict>

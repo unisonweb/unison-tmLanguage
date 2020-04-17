@@ -12,6 +12,7 @@ patterns:
 - include: '#control'
 - include: '#def'
 - include: '#forall'
+- include: '#arrow'
 
 repository:
   comment:
@@ -40,7 +41,7 @@ repository:
     patterns:
     - include: '#string-character-escape'
   match-with:
-    match: (\s|^)(cases|match|with|->)(?=\s|$)
+    match: (\s|^)(cases|match|with)(?=\s|$)
     captures:
       '2': { name: keyword.control.match.unison }
   control:
@@ -60,6 +61,10 @@ repository:
     match: (\s|^|\b)(forall|∀)(\s|$|\b)
     captures:
       '2': { name: keyword.other.forall.unison }
+  arrow:
+    match: (->)
+    captures:
+      '1': { name: keyword.other.arrow.unison }
 
   eof-comment:
     patterns:
