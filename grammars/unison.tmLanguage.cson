@@ -28,6 +28,9 @@ patterns: [
   {
     include: "#forall"
   }
+  {
+    include: "#arrow"
+  }
 ]
 repository:
   comment:
@@ -78,7 +81,7 @@ repository:
       }
     ]
   "match-with":
-    match: "(\\s|^)(cases|match|with|->)(?=\\s|$)"
+    match: "(\\s|^)(cases|match|with)(?=\\s|$)"
     captures:
       "2":
         name: "keyword.control.match.unison"
@@ -109,6 +112,11 @@ repository:
     captures:
       "2":
         name: "keyword.other.forall.unison"
+  arrow:
+    match: "(->)"
+    captures:
+      "1":
+        name: "keyword.other.arrow.unison"
   "eof-comment":
     patterns: [
       {
