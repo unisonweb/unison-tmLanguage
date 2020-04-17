@@ -65,9 +65,13 @@ export namespace Token {
     export const Colon = createToken(':', 'keyword.other.colon.unison');
   }
 
-  export namespace ForAll{
+  export namespace ForAll {
     export const ForAll = createToken('forall', 'keyword.other.forall.unison');
     export const ForAllSymbol = createToken('∀', 'keyword.other.forall.unison');
+  }
+
+  export namespace Arrow {
+    export const Arrow = createToken('->', 'keyword.other.arrow.unison');
   }
 
   export namespace Source {
