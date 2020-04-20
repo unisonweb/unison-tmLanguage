@@ -13,6 +13,7 @@ patterns:
 - include: '#def'
 - include: '#forall'
 - include: '#arrow'
+- include: '#watch'
 
 repository:
   comment:
@@ -65,6 +66,10 @@ repository:
     match: (->)
     captures:
       '1': { name: keyword.other.arrow.unison }
+  watch:
+    match: ^(>)
+    captures:
+      '1': { name: keyword.other.watch.expression.unison }
 
   eof-comment:
     patterns:
