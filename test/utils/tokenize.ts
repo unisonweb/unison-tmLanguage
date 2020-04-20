@@ -74,6 +74,10 @@ export namespace Token {
     export const Arrow = createToken('->', 'keyword.other.arrow.unison');
   }
 
+  export namespace Watches {
+    export const Watch = createToken('>', 'keyword.other.watch.expression.unison');
+  }
+
   export namespace Source {
     export const Text = (text: string) => createToken(text, 'source.u');
   }
