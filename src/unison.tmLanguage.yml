@@ -14,6 +14,7 @@ patterns:
 - include: '#forall'
 - include: '#arrow'
 - include: '#watch'
+- include: '#test-watch'
 
 repository:
   comment:
@@ -70,6 +71,10 @@ repository:
     match: ^(>)
     captures:
       '1': { name: keyword.other.watch.expression.unison }
+  test-watch:
+    match: ^(test>)
+    captures:
+      '1': { name: keyword.other.test.watch.expression.unison }
 
   eof-comment:
     patterns:
