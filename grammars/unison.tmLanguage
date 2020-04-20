@@ -52,6 +52,10 @@
         <key>include</key>
         <string>#watch</string>
       </dict>
+      <dict>
+        <key>include</key>
+        <string>#test-watch</string>
+      </dict>
     </array>
     <key>repository</key>
     <dict>
@@ -234,6 +238,19 @@
           <dict>
             <key>name</key>
             <string>keyword.other.watch.expression.unison</string>
+          </dict>
+        </dict>
+      </dict>
+      <key>test-watch</key>
+      <dict>
+        <key>match</key>
+        <string>^(test&gt;)</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.test.watch.expression.unison</string>
           </dict>
         </dict>
       </dict>
