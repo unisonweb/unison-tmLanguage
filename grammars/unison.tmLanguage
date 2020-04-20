@@ -48,6 +48,10 @@
         <key>include</key>
         <string>#arrow</string>
       </dict>
+      <dict>
+        <key>include</key>
+        <string>#watch</string>
+      </dict>
     </array>
     <key>repository</key>
     <dict>
@@ -217,6 +221,19 @@
           <dict>
             <key>name</key>
             <string>keyword.other.arrow.unison</string>
+          </dict>
+        </dict>
+      </dict>
+      <key>watch</key>
+      <dict>
+        <key>match</key>
+        <string>^(&gt;)</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.watch.expression.unison</string>
           </dict>
         </dict>
       </dict>

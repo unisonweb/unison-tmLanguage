@@ -31,6 +31,9 @@
     },
     {
       "include": "#arrow"
+    },
+    {
+      "include": "#watch"
     }
   ],
   "repository": {
@@ -141,6 +144,14 @@
       "captures": {
         "1": {
           "name": "keyword.other.arrow.unison"
+        }
+      }
+    },
+    "watch": {
+      "match": "^(>)",
+      "captures": {
+        "1": {
+          "name": "keyword.other.watch.expression.unison"
         }
       }
     },
