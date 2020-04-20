@@ -76,6 +76,7 @@ export namespace Token {
 
   export namespace Watches {
     export const Watch = createToken('>', 'keyword.other.watch.expression.unison');
+    export const TestWatch = createToken('test>', 'keyword.other.test.watch.expression.unison');
   }
 
   export namespace Source {
